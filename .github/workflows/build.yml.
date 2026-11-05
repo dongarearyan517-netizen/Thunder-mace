@@ -12,7 +12,8 @@ jobs:
       - run: unzip ThunderMace.zip
       - run: mvn -B package
         working-directory: ThunderMace
+      - run: ls -R ThunderMace/target
       - uses: actions/upload-artifact@v4
         with:
           name: ThunderMace-jar
-          path: ThunderMace/target/ThunderMace-1.2.0.jar
+          path: ThunderMace/target/*.jar
